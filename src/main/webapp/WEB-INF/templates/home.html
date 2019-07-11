@@ -1,0 +1,17 @@
+<html xmlns="http://www.3c.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" >  <!--声明Thymeleaf命名空间-->
+<head>
+   <title>Spittr</title>
+    <link rel="stylesheet"
+          type="text/css"
+          th:href="@{/resources/style.css}" ></link> <!-- 到页面样式的th:href 链接-->
+</head>
+<body>
+    <h1>
+        welcome to spittr
+    </h1>
+    <!-- 到页面的th:href 链接-->
+        <a th:href="@{/spittles}">Spittles</a>
+        <a th:href="@{/spitter/register}">Register</a>
+</body>
+</html>

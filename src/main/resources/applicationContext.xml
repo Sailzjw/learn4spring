@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:flow="http://www.springframework.org/schema/webflow-config"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/webflow-config
+	http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.3.xsd">
+
+
+
+	<!--配置spring流程执行器 Executes flows: the entry point into the Spring Web Flow system-->
+    <!--<flow:flow-executor id="flowExecutor" />-->
+    <!--&lt;!&ndash;配置流程注册表 The registry of executable flow definitions&ndash;&gt;-->
+	<!--<flow:flow-registry id="flowRegistry" >-->
+		<!--<flow:flow-location id="pizza"-->
+                            <!--path="/WEB-INF/flows/springpizza.xml" />-->
+	<!--</flow:flow-registry>-->
+	<!--&lt;!&ndash;处理流程请求 Maps request paths to flows in the flowRegistry&ndash;&gt;-->
+    <!--<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">-->
+		<!--<property name="flowRegistry" ref="flowRegistry"></property>-->
+	<!--</bean>-->
+	<!--<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">-->
+		<!--<property name="flowExecutor" ref="flowExecutor" />-->
+	<!--</bean>-->
+
+	<!--<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+		<!--<property name="locations">-->
+			<!--<list>-->
+				<!--<value>classpath:jdbc.properties</value>-->
+				<!--<value>classpath*:application.properties</value>-->
+			<!--</list>-->
+		<!--</property>-->
+	<!--</bean>-->
+
+	<!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">-->
+		<!--&lt;!&ndash; 基本属性 url、user、password &ndash;&gt;-->
+		<!--<property name="url" value="${jdbc_url}" />-->
+		<!--<property name="username" value="${jdbc_user}" />-->
+		<!--<property name="password" value="${jdbc_password}" />-->
+
+		<!--&lt;!&ndash; 配置初始化大小、最小、最大 &ndash;&gt;-->
+		<!--<property name="initialSize" value="10" />-->
+		<!--<property name="minIdle" value="10" />-->
+		<!--<property name="maxActive" value="50" />-->
+
+		<!--&lt;!&ndash; 配置获取连接等待超时的时间 &ndash;&gt;-->
+		<!--<property name="maxWait" value="60000" />-->
+
+		<!--&lt;!&ndash; 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 &ndash;&gt;-->
+		<!--<property name="timeBetweenEvictionRunsMillis" value="60000" />-->
+
+		<!--&lt;!&ndash; 配置一个连接在池中最小生存的时间，单位是毫秒 &ndash;&gt;-->
+		<!--<property name="minEvictableIdleTimeMillis" value="300000" />-->
+
+		<!--<property name="validationQuery" value="SELECT 'x'" />-->
+		<!--<property name="testWhileIdle" value="true" />-->
+		<!--<property name="testOnBorrow" value="false" />-->
+		<!--<property name="testOnReturn" value="false" />-->
+
+		<!--&lt;!&ndash; 打开PSCache，并且指定每个连接上PSCache的大小 ,如果用Oracle，则把poolPreparedStatements配置为true，mysql可以配置为false。分库分表较多的数据库，建议配置为false &ndash;&gt;-->
+		<!--<property name="poolPreparedStatements" value="false" />-->
+		<!--<property name="maxPoolPreparedStatementPerConnectionSize" value="20" />-->
+
+		<!--&lt;!&ndash; 配置监控统计拦截的filters &ndash;&gt;-->
+		<!--<property name="filters" value="stat" />-->
+	<!--</bean>-->
+
+
+	<!--<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+		<!--<property name="dataSource" ref="dataSource" />-->
+		<!--<property name="mapperLocations" >-->
+			<!--<array>-->
+				<!--<value>classpath*:com/migu/cm/dao/mapper/*.xml</value>-->
+			<!--</array>-->
+		<!--</property>-->
+		<!--<property name="plugins">-->
+			<!--<array>-->
+				<!--<bean class="com.github.pagehelper.PageInterceptor">-->
+					<!--<property name="properties">-->
+						<!--&lt;!&ndash;使用下面的方式配置参数，一行配置一个 &ndash;&gt;-->
+						<!--<value></value>-->
+					<!--</property>-->
+				<!--</bean>-->
+			<!--</array>-->
+		<!--</property>-->
+	<!--</bean>-->
+
+	<!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+		<!--<property name="dataSource" ref="dataSource" />-->
+	<!--</bean>-->
+
+	<!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+		<!--<property name="basePackage" value="com.migu.cm.dao" />-->
+		<!--<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />-->
+	<!--</bean>-->
+
+
+</beans>
